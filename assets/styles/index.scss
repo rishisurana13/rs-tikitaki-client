@@ -1,1 +1,23 @@
 @import '~bootstrap/scss/bootstrap';
+
+
+
+
+
+
+body {
+  background-color: black;
+
+
+}
+
+.box {
+  align-items: center;
+  background-color: white;
+  border: 1px solid black;
+  color: #ff0000;
+  display: flex;
+  height: 150px;
+  width: 150px;
+  justify-content: center;
+}
