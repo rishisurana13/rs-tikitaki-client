@@ -7,15 +7,28 @@
 
 body {
   background-color: black;
+  font-size: 50px;
 
 
+
+}
+
+button {
+  font-size: 18px;
+
+
+}
+
+h1 {
+  color: white;
+  text-align: center;
 }
 
 .box {
   align-items: center;
   background-color: white;
-  border: 1px solid black;
-  color: #ff0000;
+  border: 4px solid black;
+  color: black;
   display: flex;
   height: 150px;
   width: 150px;
