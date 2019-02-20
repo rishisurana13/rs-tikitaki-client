@@ -2,18 +2,27 @@
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
-require('./events.js')
-require('./api.js')
-require('./gameLogic.js')
+
+const events = require('./auth/events.js')
+// const exampleEvents = require('./auth/events.js')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
 $(() => {
+  $('#sign-up-form').on('submit', events.onSignUp)
+  $('#sign-in-form').on('submit', events.onSignIn)
+  $('#change-password-form').on('submit', events.onChangePassword)
+  $('#sign-out').on('submit', events.onSignOut)
+  // exampleEvents.addHandlers()
+
+  $('#show-all-examples').on('submit', events.onShowExamples)
+
   const xVal = 'X'
   const oVal = 'O'
 
-
+  let player1Score = 0
+  let player2Score = 0
 
   let click = 0
 
@@ -27,6 +36,10 @@ $(() => {
   let clickBox7 = 0
   let clickBox8 = 0
   const outcome = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ]
+
+  let player1Win = false
+  let player2Win = false
+  let draw = true
 
   const gameOver = () => {
     const index0 = outcome[0]
@@ -44,21 +57,140 @@ $(() => {
     //   6  7  8
 
     if ((index0 === xVal && index1 === xVal && index2 === xVal) || (index3 === xVal && index4 === xVal && index5 === xVal) || (index6 === xVal && index7 === xVal && index8 === xVal)) {
-      return true
+      click = -1
+
+      clickBox0 = 0
+      clickBox1 = 0
+      clickBox2 = 0
+      clickBox3 = 0
+      clickBox4 = 0
+      clickBox5 = 0
+      clickBox6 = 0
+      clickBox7 = 0
+      clickBox8 = 0
+      player2Win = true
+      draw = false
+      return player2Win
     } else if ((index0 === oVal && index1 === oVal && index2 === oVal) || (index3 === oVal && index4 === oVal && index5 === oVal) || (index6 === oVal && index7 === oVal && index8 === oVal)) {
-      return true
+      click = -1
+
+      clickBox0 = 0
+      clickBox1 = 0
+      clickBox2 = 0
+      clickBox3 = 0
+      clickBox4 = 0
+      clickBox5 = 0
+      clickBox6 = 0
+      clickBox7 = 0
+      clickBox8 = 0
+      player1Win = true
+      draw = false
+      return player1Win
     } else if ((index0 === xVal && index3 === xVal && index6 === xVal) || (index1 === xVal && index4 === xVal && index7 === xVal) || (index2 === xVal && index5 === xVal && index8 === xVal)) {
-      return true
+      click = -1
+
+      clickBox0 = 0
+      clickBox1 = 0
+      clickBox2 = 0
+      clickBox3 = 0
+      clickBox4 = 0
+      clickBox5 = 0
+      clickBox6 = 0
+      clickBox7 = 0
+      clickBox8 = 0
+      player2Win = true
+      draw = false
+      return player2Win
     } else if ((index0 === oVal && index3 === oVal && index6 === oVal) || (index1 === oVal && index4 === oVal && index7 === oVal) || (index2 === oVal && index5 === oVal && index8 === oVal)) {
-      return true
+      click = -1
+
+      clickBox0 = 0
+      clickBox1 = 0
+      clickBox2 = 0
+      clickBox3 = 0
+      clickBox4 = 0
+      clickBox5 = 0
+      clickBox6 = 0
+      clickBox7 = 0
+      clickBox8 = 0
+      player1Win = true
+      draw = false
+      return player1Win
     } else if ((index0 === xVal && index4 === xVal && index8 === xVal) || (index2 === xVal && index4 === xVal && index6 === xVal)) {
-      return true
+      click = -1
+
+      clickBox0 = 0
+      clickBox1 = 0
+      clickBox2 = 0
+      clickBox3 = 0
+      clickBox4 = 0
+      clickBox5 = 0
+      clickBox6 = 0
+      clickBox7 = 0
+      clickBox8 = 0
+      player2Win = true
+      draw = false
+      return player2Win
     } else if ((index0 === oVal && index4 === oVal && index8 === oVal) || (index2 === oVal && index4 === oVal && index6 === oVal)) {
-      return true
+      click = -1
+
+      clickBox0 = 0
+      clickBox1 = 0
+      clickBox2 = 0
+      clickBox3 = 0
+      clickBox4 = 0
+      clickBox5 = 0
+      clickBox6 = 0
+      clickBox7 = 0
+      clickBox8 = 0
+      player1Win = true
+      draw = false
+      return player1Win
     } else {
       return false
     }
   }
+
+  // onClick="document.location.reload(true)" substitute
+  $('#resetButton').on('click', function (click) {
+
+
+     $('#score').html('Score = P1:   ' + player1Score + '    P2:     ' + player2Score)
+    // document.getElementById('score').innerHTML = 'p1' + score;
+
+
+    outcome.splice(0, 1, ' ')
+    outcome.splice(1, 1, ' ')
+    outcome.splice(2, 1, ' ')
+    outcome.splice(3, 1, ' ')
+    outcome.splice(4, 1, ' ')
+    outcome.splice(5, 1, ' ')
+    outcome.splice(6, 1, ' ')
+    outcome.splice(7, 1, ' ')
+    outcome.splice(8, 1, ' ')
+
+    $('#0').text(' ').css('background-color', 'white')
+    $('#1').text(' ').css('background-color', 'white')
+    $('#2').text(' ').css('background-color', 'white')
+    $('#3').text(' ').css('background-color', 'white')
+    $('#4').text(' ').css('background-color', 'white')
+    $('#5').text(' ').css('background-color', 'white')
+    $('#6').text(' ').css('background-color', 'white')
+    $('#7').text(' ').css('background-color', 'white')
+    $('#8').text(' ').css('background-color', 'white')
+    click = -1
+    clickBox0 = 0
+    clickBox1 = 0
+    clickBox2 = 0
+    clickBox3 = 0
+    clickBox4 = 0
+    clickBox5 = 0
+    clickBox6 = 0
+    clickBox7 = 0
+    clickBox8 = 0
+
+    $('#playerMove').text('Player1 to move')
+  })
 
   $('#0').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox0 < 1) {
@@ -72,11 +204,12 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player2 wins!')
         $('#playerMove').text('Player2 Wins! Click button to reset')
+        player2Score++
+
       } else {
-        $('#playerMove').text('Player1 to move')
+        // $('#playerMove').text('game is a draw')
+        draw = true
       }
-
-
       clickBox0++
       click++
     } else if (click < 9 && click % 2 === 0 && clickBox0 < 1) {
@@ -89,10 +222,11 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player1 Wins')
         $('#playerMove').text('Player1 Wins! Click button to reset')
+        player1Score++
       } else {
         $('#playerMove').text('Player2 to move')
+        draw = true
       }
-
 
       clickBox0++
       click++
@@ -112,6 +246,7 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player2 wins!')
         $('#playerMove').text('Player2 Wins! Click button to reset')
+        player2Score++
       } else {
         $('#playerMove').text('Player1 to move')
       }
@@ -127,6 +262,7 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player1 wins!')
         $('#playerMove').text('Player1 Wins! Click button to reset')
+        player1Score++
       } else {
         $('#playerMove').text('Player2 to move')
       }
@@ -148,10 +284,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player2 wins!')
         $('#playerMove').text('Player2 Wins! Click button to reset')
+        player2Score++
       } else {
         $('#playerMove').text('Player1 to move')
       }
-
 
       clickBox2++
       click++
@@ -164,10 +300,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player1 wins!')
         $('#playerMove').text('Player1 Wins! Click button to reset')
+        player1Score++
       } else {
         $('#playerMove').text('Player2 to move')
       }
-
 
       clickBox2++
       click++
@@ -187,10 +323,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player2 wins!')
         $('#playerMove').text('Player2 Wins! Click button to reset')
+        player2Score++
       } else {
         $('#playerMove').text('Player1 to move')
       }
-
 
       clickBox3++
       click++
@@ -204,6 +340,7 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player1 wins!')
         $('#playerMove').text('Player1 Wins! Click button to reset')
+        player1Score++
       } else {
         $('#playerMove').text('Player2 to move')
       }
@@ -226,10 +363,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player2 wins!')
         $('#playerMove').text('Player2 Wins! Click button to reset')
+        player2Score++
       } else {
         $('#playerMove').text('Player1 to move')
       }
-
 
       clickBox4++
       click++
@@ -242,10 +379,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player1 wins!')
         $('#playerMove').text('Player1 Wins! Click button to reset')
+        player1Score++
       } else {
         $('#playerMove').text('Player2 to move')
       }
-
 
       clickBox4++
       click++
@@ -264,10 +401,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player2 wins!')
         $('#playerMove').text('Player2 Wins! Click button to reset')
+        player2Score++
       } else {
         $('#playerMove').text('Player1 to move')
       }
-
 
       clickBox5++
       click++
@@ -280,10 +417,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player1 wins!')
         $('#playerMove').text('Player1 Wins! Click button to reset')
+        player1Score++
       } else {
         $('#playerMove').text('Player2 to move')
       }
-
 
       clickBox5++
       click++
@@ -303,10 +440,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player2 wins!')
         $('#playerMove').text('Player2 Wins! Click button to reset')
+        player2Score++
       } else {
         $('#playerMove').text('Player1 to move')
       }
-
 
       clickBox6++
       click++
@@ -319,10 +456,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player1 wins!')
         $('#playerMove').text('Player1 Wins! Click button to reset')
+        player1Score++
       } else {
         $('#playerMove').text('Player2 to move')
       }
-
 
       clickBox6++
       click++
@@ -342,10 +479,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player2 wins!')
         $('#playerMove').text('Player2 Wins! Click button to reset')
+        player2Score++
       } else {
         $('#playerMove').text('Player1 to move')
       }
-
 
       clickBox7++
       click++
@@ -358,10 +495,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player1 wins!')
         $('#playerMove').text('Player1 Wins! Click button to reset')
+        player1Score++
       } else {
         $('#playerMove').text('Player2 to move')
       }
-
 
       clickBox7++
       click++
@@ -380,6 +517,7 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player2 wins!')
         $('#playerMove').text('Player2 Wins! Click button to reset')
+        player2Score++
       } else {
         $('#playerMove').text('Player1 to move')
       }
@@ -394,13 +532,10 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player1 wins!')
         $('#playerMove').text('Player1 Wins! Click button to reset')
+        player1Score++
       } else {
         $('#playerMove').text('Player2 to move')
       }
-
-
-
-
 
       clickBox8++
       click++

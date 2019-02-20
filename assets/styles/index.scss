@@ -1,28 +1,50 @@
 @import '~bootstrap/scss/bootstrap';
 
-
-
-
-
-
 body {
   background-color: black;
-  font-size: 50px;
-
-
-
+  //font-size: 16px;
 }
 
 button {
   font-size: 18px;
+  padding: 5px;
+}
+
+form {
+  width: 25.5%;
+  height: 10%;
+  padding: 10px;
+
+  margin-left: 550px;
 
 
+}
+
+h1,
+h2,
+h3 {
+  color: white;
+  text-align: center;
+  // margin-right: 800px;
 }
 
 h1 {
-  color: white;
-  text-align: center;
+  font-size: 100px;
 }
+p {
+  color: white;
+}
+
+#boxes {
+  font-size: 50px;
+  margin-left: 450px;
+  height: 500px;
+  width: 500px;
+
+
+
+}
+
 
 .box {
   align-items: center;
@@ -32,5 +54,5 @@ h1 {
   display: flex;
   height: 150px;
   width: 150px;
-  justify-content: center;
+  // justify-content: center;
 }
