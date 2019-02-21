@@ -17,9 +17,15 @@ $(() => {
   $('#boxes').hide('click')
   $('#playerMove').hide('click')
   $('#score').hide('click')
+  $('#sign-in-form').show('click')
+  $('#sign-up-form').show('click')
+  $('#sign-out-form').hide('click')
+  $('#change-password-form').hide('click')
+  $('#sign-out').hide('click')
+  $('#footer').show('click')
   // exampleEvents.addHandlers()
 
-  $('#show-all-examples').on('submit', events.onShowExamples)
+  //$('#show-all-examples').on('submit', events.onShowExamples)
 
   const xVal = 'X'
   const oVal = 'O'
@@ -150,6 +156,7 @@ $(() => {
       draw = false
       return player1Win
     } else {
+
       return false
     }
   }
@@ -213,6 +220,7 @@ $(() => {
       } else {
         // $('#playerMove').text('game is a draw')
         draw = true
+
       }
       clickBox0++
       click++
@@ -230,6 +238,7 @@ $(() => {
       } else {
         $('#playerMove').text('Player2 to move')
         draw = true
+
       }
 
       clickBox0++

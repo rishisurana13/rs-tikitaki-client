@@ -1,23 +1,23 @@
 'use strict'
 
 const store = require('../store.js')
-const app = require('../app.js')
 
 const signUpSuccess = () => {
   $('#user-message').text('successfully signed up!')
+
 }
 const signInSuccess = (responseData) => {
   $('#user-message').text('successfully signed In!')
   store.user = responseData.user
   $('#sign-in-form').hide('click')
   $('#sign-up-form').hide('click')
-  $('#sign-out-form').hide('click')
-  $('#change-password-form').hide('click')
+  $('#sign-out-form').show('click')
+  $('#change-password-form').show('click')
   $('#boxes').show('click')
   $('#playerMove').show('click')
   $('#score').show('click')
-
-
+  $('#sign-out').show('click')
+  $('#footer').hide('click')
 }
 const signOutSuccess = (responseData) => {
   $('#user-message').text('successfully signed Out!')
@@ -26,15 +26,13 @@ const signOutSuccess = (responseData) => {
   console.log('store: ', store)
   $('#sign-in-form').show('click')
   $('#sign-up-form').show('click')
-  $('#sign-out-form').show('click')
-  $('#change-password-form').show('click')
+  $('#sign-out-form').hide('click')
+  $('#change-password-form').hide('click')
   $('#boxes').hide('click')
   $('#playerMove').hide('click')
   $('#score').hide('click')
-
-
-
-
+  $('#sign-out').hide('click')
+  $('#footer').show('click')
 }
 
 const signOutFailure = () => {
