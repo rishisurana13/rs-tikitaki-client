@@ -17,17 +17,19 @@
 
 
 <body>
-  <h2 id='playerMove'> </h2>
+  <h2 id='playerMove'> Player1 to Move </h2>
 
   <h3 id='score'> Score : </h3>
-  <button type="reset" id="resetButton"> New Game </button>
 
 
 
 
-<div id='container'>
-  <div id='forms'>
-    <form id="sign-up-form">
+
+
+
+<div id='container' class='container'>
+  <div id='forms' class='forms'>
+    <form id="sign-up-form" class="sign-up-form">
       <input name="credentials[email]" type="email" placeholder="email">
       <input name="credentials[password]" type="password" placeholder="password">
       <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
@@ -58,7 +60,7 @@
     </form>
   </div>
 
-  <div id="boxes" class="container my-5">
+  <div id="boxes" class="container my-5 boxes">
 
 
     <div class="row mainBox">
@@ -74,6 +76,8 @@
       <div class="col-sm-4 col-lg-4 box" id="6"></div>
       <div class="col-sm-4 col-lg-4 box" id="7"></div>
       <div class="col-sm-4 col-lg-4 box" id="8"></div>
+      <button type="reset" id="resetButton" class="resetButton"> New Game </button>
+
 
 
 
@@ -84,6 +88,8 @@
 
 
 
+
 </body>
+
 
 </html>
