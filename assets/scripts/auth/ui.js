@@ -33,6 +33,7 @@ const signOutSuccess = (responseData) => {
   $('#score').hide('click')
   $('#sign-out').hide('click')
   $('#footer').show('click')
+
 }
 
 const signOutFailure = () => {

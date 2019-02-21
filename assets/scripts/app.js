@@ -154,6 +154,7 @@ $(() => {
       clickBox8 = 0
       player1Win = true
       draw = false
+
       return player1Win
     } else {
 
@@ -196,13 +197,58 @@ $(() => {
     clickBox6 = 0
     clickBox7 = 0
     clickBox8 = 0
-    player1Score = 0
+
+
+
+
+    $('#playerMove').text('Player1 to move')
+  }
+  const gameReset2 = (click) => {
+
+    // document.getElementById('score').innerHTML = 'p1' + score;
+
+    outcome.splice(0, 1, ' ')
+    outcome.splice(1, 1, ' ')
+    outcome.splice(2, 1, ' ')
+    outcome.splice(3, 1, ' ')
+    outcome.splice(4, 1, ' ')
+    outcome.splice(5, 1, ' ')
+    outcome.splice(6, 1, ' ')
+    outcome.splice(7, 1, ' ')
+    outcome.splice(8, 1, ' ')
+
+    $('#0').text(' ').css('background-color', 'white')
+    $('#1').text(' ').css('background-color', 'white')
+    $('#2').text(' ').css('background-color', 'white')
+    $('#3').text(' ').css('background-color', 'white')
+    $('#4').text(' ').css('background-color', 'white')
+    $('#5').text(' ').css('background-color', 'white')
+    $('#6').text(' ').css('background-color', 'white')
+    $('#7').text(' ').css('background-color', 'white')
+    $('#8').text(' ').css('background-color', 'white')
+    click = -1
+    clickBox0 = 0
+    clickBox1 = 0
+    clickBox2 = 0
+    clickBox3 = 0
+    clickBox4 = 0
+    clickBox5 = 0
+    clickBox6 = 0
+    clickBox7 = 0
+    clickBox8 = 0
+    player1Win = 0
     player2Win = 0
+  $('#score').html('Score = P1:   ' + player1Score + '    P2:     ' + player2Score)
+
+
 
     $('#playerMove').text('Player1 to move')
   }
   $('#resetButton').on('click', gameReset)
-  $('#sign-out').on('click', gameReset)
+  $('#sign-out').on('click', gameReset2)
+
+
+
 
   $('#0').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox0 < 1) {

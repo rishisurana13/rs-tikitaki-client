@@ -5,7 +5,7 @@ body {
   //font-size: 16px;
 }
 
-.resetButton {
+.reset-button {
   font-size: 18px;
   padding: 5px;
   justify-content: center;
@@ -55,24 +55,27 @@ p {
   height: 500px;
   width: 500px;
   width: 55%;
-  float: left;
+  //justify-content:
+
 }
 
 .forms {
   width: 42%;
-  float: left;
-  clear: both;
-  margin-left: 110px;
-  margin-top: 40px;
+  //float: left;
+  // clear: both;
+  margin-left: 300px;
+
+
+
 
 }
 .change-pass,
 .sign-out {
   width: 42%;
-  float: right;
+  //float: right;
   clear: both;
-  margin-left: 150px;
- //margin-top: 40px;
+  margin-left: 500px;
+// margin-top: 10px;
 }
 
 
@@ -85,6 +88,7 @@ p {
   height: 150px;
   width: 150px;
   justify-content: center;
+
 }
 
 footer {
@@ -94,8 +98,10 @@ footer {
   justify-content: center;
   font-size: 80px;
   // margin-left: 50px;
-  margin-top: 500px;
+  margin-top: 200px;
   font-family: VCR OSD mono;
+
+
 
 
 
