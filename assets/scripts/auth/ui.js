@@ -11,11 +11,13 @@ const signInSuccess = (responseData) => {
   store.user = responseData.user
   $('#sign-in-form').hide('click')
   $('#sign-up-form').hide('click')
-  $('#sign-out-form').hide('click')
-  $('#change-password-form').hide('click')
+  $('#sign-out').show('click')
+  $('#change-password-form').show('click')
   $('#boxes').show('click')
   $('#playerMove').show('click')
   $('#score').show('click')
+  $('#footer').hide('click')
+  $('#resetButton').show('click')
 
 
 }
@@ -26,11 +28,13 @@ const signOutSuccess = (responseData) => {
   console.log('store: ', store)
   $('#sign-in-form').show('click')
   $('#sign-up-form').show('click')
-  $('#sign-out-form').show('click')
-  $('#change-password-form').show('click')
+  $('#sign-out').hide('click')
+  $('#change-password-form').hide('click')
   $('#boxes').hide('click')
   $('#playerMove').hide('click')
   $('#score').hide('click')
+  $('#footer').show('click')
+  $('#resetButton').hide('click')
 
 
 
