@@ -278,7 +278,7 @@ $(() => {
       $('#0').text(xVal)
 
       outcome.splice(0, 1, xVal)
-      outcome.splice(0, 1, oVal)
+
       $('#playerMove').text('Player2 to Move')
 
       $('#0').css('background-color', 'blue')
@@ -307,10 +307,10 @@ $(() => {
   $('#1').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox1 < 1) {
       $('#1').text(oVal)
-      outcome.splice(0, 1, oVal)
+      outcome.splice(1, 1, oVal)
       $('#playerMove').text('Player1 to Move')
 
-      outcome.splice(1, 1, oVal)
+
 
       $(this).css('background-color', 'red')
       if (gameOver(outcome) === true) {
