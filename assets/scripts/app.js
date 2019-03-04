@@ -4,6 +4,7 @@
 // const example = require('./example')
 
 const events = require('./auth/events.js')
+const api = require('./auth/api.js')
 // const exampleEvents = require('./auth/events.js')
 
 // use require without a reference to ensure a file is bundled
@@ -27,7 +28,6 @@ $(() => {
 
   const xVal = 'X'
   const oVal = 'O'
-
 
   let player1Score = 0
   let player2Score = 0
@@ -62,7 +62,6 @@ $(() => {
     clickBox8 = 0
   }
 
-
   const gameOver = () => {
     const index0 = outcome[0]
     const index1 = outcome[1]
@@ -90,6 +89,7 @@ $(() => {
       // clickBox6 = 0
       // clickBox7 = 0
       // clickBox8 = 0
+
       player2Win = true
       draw = false
 
@@ -174,15 +174,11 @@ $(() => {
       draw = false
 
       return player1Win
-    }
-    else {
+    } else {
       draw = true
 
-
       return false
-
     }
-
   }
 
   // onClick="document.location.reload(true)" substitute
@@ -190,7 +186,6 @@ $(() => {
   const gameReset = (click) => {
     $('#score').html('Score = P1:   ' + player1Score + '    P2:     ' + player2Score)
     $('#boxes').css('pointer-events', 'auto')
-
 
     // document.getElementById('score').innerHTML = 'p1' + score;
 
@@ -215,16 +210,11 @@ $(() => {
     $('#8').text(' ').css('background-color', 'white')
     resetValues()
 
-
-
-
     $('#playerMove').text('Player1 to move')
-
   }
   const gameReset2 = (click) => {
     $('#score').html('Score = P1:   ' + player1Score + '    P2:     ' + player2Score)
     $('#boxes').css('pointer-events', 'auto')
-
 
     // document.getElementById('score').innerHTML = 'p1' + score;
 
@@ -251,7 +241,6 @@ $(() => {
     player1Score = 0
     player2Score = 0
 
-
     $('#playerMove').text('Player1 to move')
   }
 
@@ -263,38 +252,35 @@ $(() => {
   $('#0').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox0 < 1) {
       $('#0').text(oVal)
-      console.log('click')
-      outcome.splice(0, 1, oVal)
 
-      console.log(outcome)
+      outcome.splice(0, 1, oVal)
+      $('#playerMove').text('Player1 to Move')
+
       $('#0').css('background-color', 'red')
 
       if (gameOver(outcome) === true) {
-        alert('Player2 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
 
         player2Score++
-      }
-      else {
+      } else {
         // $('#playerMove').text('game is a draw')
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
           $('#boxes').css('pointer-events', 'none')
-
-
         }
-
       }
       clickBox0++
       click++
     } else if (click < 9 && click % 2 === 0 && clickBox0 < 1) {
       $('#0').text(xVal)
-      console.log('click')
+
       outcome.splice(0, 1, xVal)
-      console.log(outcome)
+      outcome.splice(0, 1, oVal)
+      $('#playerMove').text('Player2 to Move')
+
       $('#0').css('background-color', 'blue')
 
       if (gameOver(outcome) === true) {
@@ -304,43 +290,36 @@ $(() => {
         $('#playerMove').text('Player1 Wins! Click Button to reset')
 
         player1Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
-
-
 
       clickBox0++
       click++
     } else {
-      console.log('error')
-      alert('error')
+      $('#playerMove').text('error')
     }
   })
 
   $('#1').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox1 < 1) {
       $('#1').text(oVal)
-      console.log('click')
+      outcome.splice(0, 1, oVal)
+      $('#playerMove').text('Player1 to Move')
+
       outcome.splice(1, 1, oVal)
-      console.log(outcome)
+
       $(this).css('background-color', 'red')
       if (gameOver(outcome) === true) {
-        alert('Player2 wins!')
-
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
@@ -348,51 +327,46 @@ $(() => {
       click++
     } else if (click < 9 && click % 2 === 0 && clickBox1 < 1) {
       $('#1').text(xVal)
-      console.log('click')
+
       outcome.splice(1, 1, xVal)
-      console.log(outcome)
+      $('#playerMove').text('Player2 to Move')
+
       $(this).css('background-color', 'blue')
       if (gameOver(outcome) === true) {
-        alert('Player1 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
       clickBox1++
       click++
     } else {
-      console.log('error')
-      alert('error')
+      $('#playerMove').text('error')
     }
   })
   $('#2').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox2 < 1) {
       $('#2').text(oVal)
-      console.log('click')
+
       outcome.splice(2, 1, oVal)
-      console.log(outcome)
+      $('#playerMove').text('Player1 to Move')
+
       $(this).css('background-color', 'red')
       if (gameOver(outcome) === true) {
-        alert('Player2 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
@@ -400,52 +374,47 @@ $(() => {
       click++
     } else if (click < 9 && click % 2 === 0 && clickBox2 < 1) {
       $('#2').text(xVal)
-      console.log('click')
+
       outcome.splice(2, 1, xVal)
-      console.log(outcome)
+      $('#playerMove').text('Player2 to Move')
+
       $(this).css('background-color', 'blue')
       if (gameOver(outcome) === true) {
-        alert('Player1 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
       clickBox2++
       click++
     } else {
-      console.log('error')
-      alert('error')
+      $('#playerMove').text('error')
     }
   })
 
   $('#3').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox3 < 1) {
       $('#3').text(oVal)
-      console.log('click')
+
       outcome.splice(3, 1, oVal)
-      console.log(outcome)
+      $('#playerMove').text('Player1 to Move')
+
       $(this).css('background-color', 'red')
       if (gameOver(outcome) === true) {
-        alert('Player2 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
@@ -454,52 +423,46 @@ $(() => {
     } else if (click < 9 && click % 2 === 0 && clickBox3 < 1) {
       $('#3').text(xVal)
 
-      console.log('click')
       outcome.splice(3, 1, xVal)
-      console.log(outcome)
+      $('#playerMove').text('Player2 to Move')
+
       $(this).css('background-color', 'blue')
       if (gameOver(outcome) === true) {
-        alert('Player1 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
       clickBox3++
       click++
     } else {
-      console.log('error')
-      alert('error')
+      $('#playerMove').text('error')
     }
   })
 
   $('#4').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox4 < 1) {
       $('#4').text(oVal)
-      console.log('click')
+
       outcome.splice(4, 1, oVal)
-      console.log(outcome)
+      $('#playerMove').text('Player1 to Move')
+
       $(this).css('background-color', 'red')
       if (gameOver(outcome) === true) {
-        alert('Player2 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
@@ -507,51 +470,46 @@ $(() => {
       click++
     } else if (click < 9 && click % 2 === 0 && clickBox4 < 1) {
       $('#4').text(xVal)
-      console.log('click')
+
       outcome.splice(4, 1, xVal)
-      console.log(outcome)
+      $('#playerMove').text('Player1 to Move')
+
       $(this).css('background-color', 'blue')
       if (gameOver(outcome) === true) {
-        alert('Player1 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
       clickBox4++
       click++
     } else {
-      console.log('error')
-      alert('error')
+      $('#playerMove').text('error')
     }
   })
   $('#5').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox5 < 1) {
       $('#5').text(oVal)
-      console.log('click')
+
       outcome.splice(5, 1, oVal)
-      console.log(outcome)
+      $('#playerMove').text('Player2 to Move')
+
       $(this).css('background-color', 'red')
       if (gameOver(outcome) === true) {
-        alert('Player2 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
@@ -559,52 +517,47 @@ $(() => {
       click++
     } else if (click < 9 && click % 2 === 0 && clickBox5 < 1) {
       $('#5').text(xVal)
-      console.log('click')
+
       outcome.splice(5, 1, xVal)
-      console.log(outcome)
+      $('#playerMove').text('Player2 to Move')
+
       $(this).css('background-color', 'blue')
       if (gameOver(outcome) === true) {
-        alert('Player1 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
       clickBox5++
       click++
     } else {
-      console.log('error')
-      alert('error')
+      $('#playerMove').text('error')
     }
   })
 
   $('#6').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox6 < 1) {
       $('#6').text(oVal)
-      console.log('click')
+
       outcome.splice(6, 1, oVal)
-      console.log(outcome)
+      $('#playerMove').text('Player1 to Move')
+
       $(this).css('background-color', 'red')
       if (gameOver(outcome) === true) {
-        alert('Player2 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
@@ -612,52 +565,47 @@ $(() => {
       click++
     } else if (click < 9 && click % 2 === 0 && clickBox6 < 1) {
       $('#6').text(xVal)
-      console.log('click')
+
       outcome.splice(6, 1, xVal)
-      console.log(outcome)
+      $('#playerMove').text('Player2 to Move')
+
       $(this).css('background-color', 'blue')
       if (gameOver(outcome) === true) {
-        alert('Player1 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
       clickBox6++
       click++
     } else {
-      console.log('error')
-      alert('error')
+      $('#playerMove').text('error')
     }
   })
 
   $('#7').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox7 < 1) {
       $('#7').text(oVal)
-      console.log('click')
+
       outcome.splice(7, 1, oVal)
-      console.log(outcome)
+      $('#playerMove').text('Player1 to Move')
+
       $(this).css('background-color', 'red')
       if (gameOver(outcome) === true) {
-        alert('Player2 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
@@ -665,81 +613,73 @@ $(() => {
       click++
     } else if (click < 9 && click % 2 === 0 && clickBox7 < 1) {
       $('#7').text(xVal)
-      console.log('click')
+
       outcome.splice(7, 1, xVal)
-      console.log(outcome)
+      $('#playerMove').text('Player2 to Move')
+
       $(this).css('background-color', 'blue')
       if (gameOver(outcome) === true) {
-        alert('Player1 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
       clickBox7++
       click++
     } else {
-      console.log('error')
-      alert('error')
+      $('#playerMove').text('error')
     }
   })
   $('#8').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox8 < 1) {
       $('#8').text(oVal)
-      console.log('click')
+
       outcome.splice(8, 1, oVal)
-      console.log(outcome)
+      $('#playerMove').text('Player1 to Move')
+
       $(this).css('background-color', 'red')
       if (gameOver(outcome) === true) {
-        alert('Player2 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
       clickBox8++
       click++
     } else if (click < 9 && click % 2 === 0 && clickBox8 < 1) {
       $('#8').text(xVal)
-      console.log('click')
+
       outcome.splice(8, 1, xVal)
-      console.log(outcome)
+      $('#playerMove').text('Player2 to Move')
+
       $(this).css('background-color', 'blue')
       if (gameOver(outcome) === true) {
-        alert('Player1 wins!')
         $('#boxes').css('pointer-events', 'none')
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      }            else {
+      } else {
         if (click === 8) {
           draw = true
           $('#playerMove').text('Game was a draw, click to reset!')
-
-
         }
       }
 
       clickBox8++
       click++
     } else {
-      console.log('error')
-      alert('error')
+      $('#playerMove').text('error')
     }
   })
 })

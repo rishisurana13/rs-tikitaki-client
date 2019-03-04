@@ -42,11 +42,21 @@ const signOut = (formData) => {
     data: formData
   })
 }
+const getGames = function () {
+  return $.ajax({
+    url: 'https://tic-tac-toe-wdi-production.herokuapp.com',
+    method: 'GET'
+  })
+}
+
+
 
 
 module.exports = {
 signUp,
 signIn,
 changePassword,
-signOut
+signOut,
+getGames
+
 }

@@ -7,7 +7,9 @@ const signUpSuccess = () => {
   $('#user-message').text('successfully signed up!')
 }
 const signInSuccess = (responseData) => {
-  $('#user-message').text('successfully signed In!')
+
+$('#user-message').text('successfully signed In!')
+
   store.user = responseData.user
   $('#sign-in-form').hide('click')
   $('#sign-up-form').hide('click')
@@ -40,6 +42,19 @@ const signOutSuccess = (responseData) => {
 
 
 }
+const getGamesSuccess = function (outcome) {
+    $('#book-display').html('')
+    outcome.games.forEach(outcomes => {
+    const gameHtml = (`
+    <h2>Title : ${game.outcome}</h2>
+
+    <br>
+    `)
+    $('#game-display').append(gameHtml)
+  })
+}
+
+
 
 const signOutFailure = () => {
 $('#user-message').text('error on sign out')
@@ -70,6 +85,7 @@ const failure = () => {
 }
 
 
+
 module.exports = {
 signUpSuccess,
 signUpFailure,
@@ -79,6 +95,7 @@ changePasswordFailure,
 changePasswordSuccess,
 signOutFailure,
 signOutSuccess,
-failure
+failure,
+getGamesSuccess
 
 }

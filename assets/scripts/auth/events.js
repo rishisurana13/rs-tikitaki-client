@@ -64,9 +64,16 @@ const onSignUp = (event) => {
       $('form').trigger('reset')
         }
 
+    const onGetGames = function () {
+    gamesApi.getGames()
+    .then(gamesUi.getGamesSuccess)
+    .catch(gamesUi.failure)
+}
+
 module.exports = {
 onSignUp,
 onSignIn,
 onChangePassword,
-onSignOut
+onSignOut,
+onGetGames
 }
