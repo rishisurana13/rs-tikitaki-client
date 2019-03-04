@@ -23,12 +23,11 @@ $(() => {
 
   // exampleEvents.addHandlers()
 
-  $('#show-all-examples').on('submit', events.onShowExamples)
-
-
+  // $('#show-all-examples').on('submit', events.onShowExamples)
 
   const xVal = 'X'
   const oVal = 'O'
+
 
   let player1Score = 0
   let player2Score = 0
@@ -49,6 +48,20 @@ $(() => {
   let player1Win = false
   let player2Win = false
   let draw = true
+  const resetValues = () => {
+    click = 0
+
+    clickBox0 = 0
+    clickBox1 = 0
+    clickBox2 = 0
+    clickBox3 = 0
+    clickBox4 = 0
+    clickBox5 = 0
+    clickBox6 = 0
+    clickBox7 = 0
+    clickBox8 = 0
+  }
+
 
   const gameOver = () => {
     const index0 = outcome[0]
@@ -66,115 +79,120 @@ $(() => {
     //   6  7  8
 
     if ((index0 === oVal && index1 === oVal && index2 === oVal) || (index3 === oVal && index4 === oVal && index5 === oVal) || (index6 === oVal && index7 === oVal && index8 === oVal)) {
-      click = -1
-
-      clickBox0 = 0
-      clickBox1 = 0
-      clickBox2 = 0
-      clickBox3 = 0
-      clickBox4 = 0
-      clickBox5 = 0
-      clickBox6 = 0
-      clickBox7 = 0
-      clickBox8 = 0
+      // click = -1
+      //
+      // clickBox0 = 0
+      // clickBox1 = 0
+      // clickBox2 = 0
+      // clickBox3 = 0
+      // clickBox4 = 0
+      // clickBox5 = 0
+      // clickBox6 = 0
+      // clickBox7 = 0
+      // clickBox8 = 0
       player2Win = true
       draw = false
 
       return player2Win
     } else if ((index0 === xVal && index1 === xVal && index2 === xVal) || (index3 === xVal && index4 === xVal && index5 === xVal) || (index6 === xVal && index7 === xVal && index8 === xVal)) {
-      click = -1
-
-      clickBox0 = 0
-      clickBox1 = 0
-      clickBox2 = 0
-      clickBox3 = 0
-      clickBox4 = 0
-      clickBox5 = 0
-      clickBox6 = 0
-      clickBox7 = 0
-      clickBox8 = 0
+      // click = -1
+      //
+      // clickBox0 = 0
+      // clickBox1 = 0
+      // clickBox2 = 0
+      // clickBox3 = 0
+      // clickBox4 = 0
+      // clickBox5 = 0
+      // clickBox6 = 0
+      // clickBox7 = 0
+      // clickBox8 = 0
       player1Win = true
       draw = false
 
       return player1Win
     } else if ((index0 === oVal && index3 === oVal && index6 === oVal) || (index1 === oVal && index4 === oVal && index7 === oVal) || (index2 === oVal && index5 === oVal && index8 === oVal)) {
-      click = -1
-
-      clickBox0 = 0
-      clickBox1 = 0
-      clickBox2 = 0
-      clickBox3 = 0
-      clickBox4 = 0
-      clickBox5 = 0
-      clickBox6 = 0
-      clickBox7 = 0
-      clickBox8 = 0
+      // click = -1
+      //
+      // clickBox0 = 0
+      // clickBox1 = 0
+      // clickBox2 = 0
+      // clickBox3 = 0
+      // clickBox4 = 0
+      // clickBox5 = 0
+      // clickBox6 = 0
+      // clickBox7 = 0
+      // clickBox8 = 0
       player2Win = true
       draw = false
 
       return player2Win
     } else if ((index0 === xVal && index3 === xVal && index6 === xVal) || (index1 === xVal && index4 === xVal && index7 === xVal) || (index2 === xVal && index5 === xVal && index8 === xVal)) {
-      click = -1
-
-      clickBox0 = 0
-      clickBox1 = 0
-      clickBox2 = 0
-      clickBox3 = 0
-      clickBox4 = 0
-      clickBox5 = 0
-      clickBox6 = 0
-      clickBox7 = 0
-      clickBox8 = 0
+      // click = -1
+      //
+      // clickBox0 = 0
+      // clickBox1 = 0
+      // clickBox2 = 0
+      // clickBox3 = 0
+      // clickBox4 = 0
+      // clickBox5 = 0
+      // clickBox6 = 0
+      // clickBox7 = 0
+      // clickBox8 = 0
       player1Win = true
       draw = false
 
       return player1Win
     } else if ((index0 === oVal && index4 === oVal && index8 === oVal) || (index2 === oVal && index4 === oVal && index6 === oVal)) {
-      click = -1
-
-      clickBox0 = 0
-      clickBox1 = 0
-      clickBox2 = 0
-      clickBox3 = 0
-      clickBox4 = 0
-      clickBox5 = 0
-      clickBox6 = 0
-      clickBox7 = 0
-      clickBox8 = 0
+      // click = -1
+      //
+      // clickBox0 = 0
+      // clickBox1 = 0
+      // clickBox2 = 0
+      // clickBox3 = 0
+      // clickBox4 = 0
+      // clickBox5 = 0
+      // clickBox6 = 0
+      // clickBox7 = 0
+      // clickBox8 = 0
       player2Win = true
       draw = false
 
       return player2Win
     } else if ((index0 === xVal && index4 === xVal && index8 === xVal) || (index2 === xVal && index4 === xVal && index6 === xVal)) {
-      click = -1
-
-      clickBox0 = 0
-      clickBox1 = 0
-      clickBox2 = 0
-      clickBox3 = 0
-      clickBox4 = 0
-      clickBox5 = 0
-      clickBox6 = 0
-      clickBox7 = 0
-      clickBox8 = 0
+      // click = -1
+      //
+      // clickBox0 = 0
+      // clickBox1 = 0
+      // clickBox2 = 0
+      // clickBox3 = 0
+      // clickBox4 = 0
+      // clickBox5 = 0
+      // clickBox6 = 0
+      // clickBox7 = 0
+      // clickBox8 = 0
       player1Win = true
       draw = false
 
       return player1Win
-    } else {
-      return false
     }
+    else {
+      draw = true
+
+
+      return false
+
+    }
+
   }
 
   // onClick="document.location.reload(true)" substitute
 
   const gameReset = (click) => {
-
     $('#score').html('Score = P1:   ' + player1Score + '    P2:     ' + player2Score)
     $('#boxes').css('pointer-events', 'auto')
 
-    // document.getElementById('score').innerHTML = 'p1' + score;
 
+    // document.getElementById('score').innerHTML = 'p1' + score;
 
     outcome.splice(0, 1, ' ')
     outcome.splice(1, 1, ' ')
@@ -195,31 +213,55 @@ $(() => {
     $('#6').text(' ').css('background-color', 'white')
     $('#7').text(' ').css('background-color', 'white')
     $('#8').text(' ').css('background-color', 'white')
-    click = -1
-    clickBox0 = 0
-    clickBox1 = 0
-    clickBox2 = 0
-    clickBox3 = 0
-    clickBox4 = 0
-    clickBox5 = 0
-    clickBox6 = 0
-    clickBox7 = 0
-    clickBox8 = 0
-    player1Score = 0
-    player2Win = 0
+    resetValues()
+
+
+
 
     $('#playerMove').text('Player1 to move')
 
+  }
+  const gameReset2 = (click) => {
+    $('#score').html('Score = P1:   ' + player1Score + '    P2:     ' + player2Score)
+    $('#boxes').css('pointer-events', 'auto')
 
 
+    // document.getElementById('score').innerHTML = 'p1' + score;
+
+    outcome.splice(0, 1, ' ')
+    outcome.splice(1, 1, ' ')
+    outcome.splice(2, 1, ' ')
+    outcome.splice(3, 1, ' ')
+    outcome.splice(4, 1, ' ')
+    outcome.splice(5, 1, ' ')
+    outcome.splice(6, 1, ' ')
+    outcome.splice(7, 1, ' ')
+    outcome.splice(8, 1, ' ')
+
+    $('#0').text(' ').css('background-color', 'white')
+    $('#1').text(' ').css('background-color', 'white')
+    $('#2').text(' ').css('background-color', 'white')
+    $('#3').text(' ').css('background-color', 'white')
+    $('#4').text(' ').css('background-color', 'white')
+    $('#5').text(' ').css('background-color', 'white')
+    $('#6').text(' ').css('background-color', 'white')
+    $('#7').text(' ').css('background-color', 'white')
+    $('#8').text(' ').css('background-color', 'white')
+    resetValues()
+    player1Score = 0
+    player2Score = 0
+
+
+    $('#playerMove').text('Player1 to move')
   }
 
   $('#resetButton').on('click', gameReset)
-  $('#sign-out').on('click', gameReset)
+
+  // $('#sign-out').on('click', gameReset2)
+  $('#sign-in-form').on('click', gameReset2)
 
   $('#0').on('click', function () {
     if (click < 9 && click % 2 !== 0 && clickBox0 < 1) {
-
       $('#0').text(oVal)
       console.log('click')
       outcome.splice(0, 1, oVal)
@@ -227,22 +269,23 @@ $(() => {
       console.log(outcome)
       $('#0').css('background-color', 'red')
 
-
       if (gameOver(outcome) === true) {
         alert('Player2 wins!')
         $('#boxes').css('pointer-events', 'none')
 
-
-
         $('#playerMove').text('Player2 Wins! Click Button to reset')
 
-
-
-
         player2Score++
-      } else {
+      }
+      else {
         // $('#playerMove').text('game is a draw')
-        draw = true
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+          $('#boxes').css('pointer-events', 'none')
+
+
+        }
 
       }
       clickBox0++
@@ -258,15 +301,19 @@ $(() => {
         alert('Player1 Wins')
         $('#boxes').css('pointer-events', 'none')
 
-
-
         $('#playerMove').text('Player1 Wins! Click Button to reset')
 
         player1Score++
-      } else {
-        $('#playerMove').text('Player2 to move')
-        draw = true
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
+
+
 
       clickBox0++
       click++
@@ -286,11 +333,15 @@ $(() => {
       if (gameOver(outcome) === true) {
         alert('Player2 wins!')
 
-
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      } else {
-        $('#playerMove').text('Player1 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox1++
@@ -305,11 +356,15 @@ $(() => {
         alert('Player1 wins!')
         $('#boxes').css('pointer-events', 'none')
 
-
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      } else {
-        $('#playerMove').text('Player2 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox1++
@@ -332,8 +387,13 @@ $(() => {
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      } else {
-        $('#playerMove').text('Player1 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox2++
@@ -350,8 +410,13 @@ $(() => {
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      } else {
-        $('#playerMove').text('Player2 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox2++
@@ -375,8 +440,13 @@ $(() => {
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      } else {
-        $('#playerMove').text('Player1 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox3++
@@ -394,8 +464,13 @@ $(() => {
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      } else {
-        $('#playerMove').text('Player2 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox3++
@@ -419,8 +494,13 @@ $(() => {
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      } else {
-        $('#playerMove').text('Player1 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox4++
@@ -437,8 +517,13 @@ $(() => {
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      } else {
-        $('#playerMove').text('Player2 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox4++
@@ -461,8 +546,13 @@ $(() => {
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      } else {
-        $('#playerMove').text('Player1 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox5++
@@ -479,8 +569,13 @@ $(() => {
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      } else {
-        $('#playerMove').text('Player2 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox5++
@@ -504,8 +599,13 @@ $(() => {
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      } else {
-        $('#playerMove').text('Player1 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox6++
@@ -522,8 +622,13 @@ $(() => {
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      } else {
-        $('#playerMove').text('Player2 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox6++
@@ -547,8 +652,13 @@ $(() => {
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      } else {
-        $('#playerMove').text('Player1 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox7++
@@ -565,8 +675,13 @@ $(() => {
 
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      } else {
-        $('#playerMove').text('Player2 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox7++
@@ -589,8 +704,13 @@ $(() => {
 
         $('#playerMove').text('Player2 Wins! Click Button to reset')
         player2Score++
-      } else {
-        $('#playerMove').text('Player1 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
       clickBox8++
       click++
@@ -604,11 +724,15 @@ $(() => {
         alert('Player1 wins!')
         $('#boxes').css('pointer-events', 'none')
 
-
         $('#playerMove').text('Player1 Wins! Click Button to reset')
         player1Score++
-      } else {
-        $('#playerMove').text('Player2 to move')
+      }            else {
+        if (click === 8) {
+          draw = true
+          $('#playerMove').text('Game was a draw, click to reset!')
+
+
+        }
       }
 
       clickBox8++
@@ -618,5 +742,4 @@ $(() => {
       alert('error')
     }
   })
-
 })
