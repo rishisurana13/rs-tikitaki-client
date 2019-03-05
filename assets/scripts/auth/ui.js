@@ -20,6 +20,9 @@ $('#user-message').text('successfully signed In!')
   $('#score').show('click')
   $('#footer').hide('click')
   $('#resetButton').show('click')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
 
 
 }
@@ -37,6 +40,9 @@ const signOutSuccess = (responseData) => {
   $('#score').hide('click')
   $('#footer').show('click')
   $('#resetButton').hide('click')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
 
 
 
@@ -58,28 +64,47 @@ const getGamesSuccess = function (outcome) {
 
 const signOutFailure = () => {
 $('#user-message').text('error on sign out')
+setTimeout(function () {
+  $('#user-message').text('')
+}, 2000)
 }
 
 const signUpFailure = () => {
 $('#user-message').text('error on sign up')
+setTimeout(function () {
+$('#user-message').text('')
+}, 2000)
 }
 
 const signInFailure = () => {
 $('#user-message').text('error on sign in')
+setTimeout(function () {
+$('#user-message').text('')
+}, 2000)
 }
 
 const changePasswordFailure = () => {
 $('#user-message').text('error in changing password')
+setTimeout(function () {
+$('#user-message').text('')
+}, 2000)
 }
 const changePasswordSuccess = () => {
 $('#user-message').text('successfully changed password!')
+setTimeout(function () {
+$('#user-message').text('')
+}, 2000)
 
 }
 
 const failure = () => {
 
   $('#user-message').text('something went wrong')
+  setTimeout(function () {
+    $('#user-message').text('')
+  }, 2000)
   $('form').trigger('reset')
+
 
 
 }

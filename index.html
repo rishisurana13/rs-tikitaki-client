@@ -16,53 +16,66 @@
 
 
 
-<h1>Tiki Taki</h1>
+<h1>[ tiki_taki ] </h1>
+
 
 
 
 <body>
-  <h2 id='playerMove'> Player1 to Move </h2>
+  <h2 id='playerMove'> [ Player1_to_Move ]</h2>
 
-  <h3 id='score'> Score : </h3>
-
-
+  <h3 id='score'> [Score: ] </h3>
 
 
+
+
+
+  <form id="sign-up-form" class="sign-up-form home">
+    <input name="credentials[email]" type="email" placeholder="[ email_id ">
+    <br>
+    <input name="credentials[password]" type="password" placeholder="[ password ]">
+    <br>
+    <input name="credentials[password_confirmation]" type="password" placeholder="[ password_confirm ]">
+    <br>
+    <input type="submit" value="[ sign Up ]">
+
+
+
+
+
+  </form>
+
+
+  <form id="sign-in-form" class="home">
+    <input name="credentials[email]" type="email" placeholder="[ email_id ]">
+    <br>
+    <input name="credentials[password]" type="password" placeholder="[ password ]">
+    <br>
+    <input type="submit" value="[ sign_in ]">
+
+    </form>
 
 
 
 
 <div id='container' class='container'>
   <div id="forms" class="forms">
-    <form id="sign-up-form" class="sign-up-form">
-      <input name="credentials[email]" type="email" placeholder="email">
-      <input name="credentials[password]" type="password" placeholder="password">
-      <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
-      <input type="submit" value="sign Up">
 
 
 
+
+
+
+
+
+    <form id="change-password-form" class="gameButton">
+
+      <input name="passwords[old]" type="password" placeholder="{old_password}">
+      <input name="passwords[new]" type="password" placeholder="{new_password}">
+      <input type="submit" value="[change_password}">
     </form>
-
-    <form id="sign-in-form">
-      <input name="credentials[email]" type="email" placeholder="email">
-      <input name="credentials[password]" type="password" placeholder="password">
-      <input type="submit" value="sign in">
-
-
-
-    </form>
-
-
-
-    <form id="change-password-form">
-
-      <input name="passwords[old]" type="password" placeholder="old password">
-      <input name="passwords[new]" type="password" placeholder="new password">
-      <input type="submit" value="change password">
-    </form>
-    <form id="sign-out">
-      <input type="submit" value="sign out">
+    <form id="sign-out" class="gameButton">
+      <input type="submit" value="[sign_out]">
     </form>
   </div>
 
@@ -89,7 +102,8 @@
 
     </div>
   </div>
-    <button type="reset" id="resetButton" class="resetButton"> New Game </button>
+    <button type="reset" id="resetButton" class="resetButton gameButton"> [ new_game ] </button>
+
 
 
     <!-- <button id="get-games-button">See past games</button>
@@ -99,11 +113,11 @@
 
 
 </div>
+
+
+
+
 <p id="user-message" class="user-message"></p>
-
-
-
-
 </body>
 
 
