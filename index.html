@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Tiki Taki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+
+
+<h1>[ tiki_taki ] </h1>
+
+
+
+
+<body>
+  <h2 id='playerMove'> [ Player1_to_Move ]</h2>
+
+  <h3 id='score'> [Score: ] </h3>
+
+
+
+
+
+  <form id="sign-up-form" class="sign-up-form home">
+    <input name="credentials[email]" type="email" placeholder="[ email_id ">
+    <br>
+    <input name="credentials[password]" type="password" placeholder="[ password ]">
+    <br>
+    <input name="credentials[password_confirmation]" type="password" placeholder="[ password_confirm ]">
+    <br>
+    <input type="submit" value="[ sign Up ]">
+
+
+
+
+
+  </form>
+
+
+  <form id="sign-in-form" class="home">
+    <input name="credentials[email]" type="email" placeholder="[ email_id ]">
+    <br>
+    <input name="credentials[password]" type="password" placeholder="[ password ]">
+    <br>
+    <input type="submit" value="[ sign_in ]">
+
+    </form>
+
+
+
+
+<div id='container' class='container'>
+  <div id="forms" class="forms">
+
+
+
+
+
+
+
+
+    <form id="change-password-form" class="gameButton">
+
+      <input name="passwords[old]" type="password" placeholder="{old_password}">
+      <input name="passwords[new]" type="password" placeholder="{new_password}">
+      <input type="submit" value="[change_password}">
+    </form>
+    <form id="sign-out" class="gameButton">
+      <input type="submit" value="[sign_out]">
+    </form>
+  </div>
+
+  <div  class="container my-5 boxes">
+
+
+    <div class="row mainBox" id="boxes" class="box1">
+
+      <div class="col-sm-4 col-lg-4 box" id="0"></div>
+      <div class="col-sm-4 col-lg-4 box" id="1"></div>
+      <div class="col-sm-4 col-lg-4 box" id="2"></div>
+
+      <div class="col-sm-4 col-lg-4 box" id="3"></div>
+      <div class="col-sm-4 col-lg-4 box" id="4"></div>
+      <div class="col-sm-4 col-lg-4 box" id="5"></div>
+
+      <div class="col-sm-4 col-lg-4 box" id="6"></div>
+      <div class="col-sm-4 col-lg-4 box" id="7"></div>
+      <div class="col-sm-4 col-lg-4 box" id="8"></div>
+
+
+
+
+
+    </div>
+  </div>
+    <button type="reset" id="resetButton" class="resetButton gameButton"> [ new_game ] </button>
+
+
+
+    <!-- <button id="get-games-button">See past games</button>
+    <div id="user-feedback"></div>
+    <div id="game-display"></div> -->
+
+
+
+</div>
+
+
+
+
+<p id="user-message" class="user-message"></p>
+</body>
+
+
+
+</html>
