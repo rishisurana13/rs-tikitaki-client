@@ -9,7 +9,7 @@ Just sign up, and enjoy this classic game with your friends!
 
 ## Where can I play?
 That's a good question. You can play this game with your friends at the following link:
-rishisurana13.github.io/rs-tikitaki-client/
+https://rishisurana13.github.io/rs-tikitaki-client/
 
 ## Technologies Used
 + HTML
